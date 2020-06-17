@@ -6,7 +6,6 @@ import {
 	Route,
 	Redirect
 } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import RouteItem from './RouteItem';
 import HomePage from '../home/HomePage';
 import FavoritesPage from '../favorites/FavoritesPage';
@@ -14,9 +13,8 @@ import ErrorBoundary from '../errors/ErrorBoundry';
 import NotFoundPage from '../errors/NotFoundPage';
 
 const ApplicationRouter = () => {
-	const history = createBrowserHistory();
 	return (
-		<Router history={history}>
+		<Router>
 			<ErrorBoundary>
 				<Switch>
 					<RouteItem exact component={HomePage} path={routes.home} />
