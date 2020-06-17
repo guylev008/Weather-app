@@ -1,13 +1,13 @@
 const theme = {
 	fontSizes: {
-		fontSize0: '36px',
-		fontSize1: '25px',
+		fontSize0: '52px',
+		fontSize1: '23px',
 		fontSize2: '20px',
-		fontSize3: '18px',
+		fontSize3: '26px',
 		fontSize4: '16px',
 		fontSize5: '14px',
-		fontSize6: '11px',
-		fontSize7: '12px',
+		fontSize6: '37px',
+		fontSize7: '43px',
 		fontSize8: '24px'
 	},
 	colors: {

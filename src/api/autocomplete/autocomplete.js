@@ -12,12 +12,6 @@ export const fetchLocations = async query => {
 			}
 		});
 
-		// const response = {
-		// 	data: [
-		// 		{ Key: 1234, LocalizedName: 'Tel Aviv', Country: { ID: 'IL' } },
-		// 		{ Key: 3456, LocalizedName: 'Tel Mond', Country: { ID: 'IL' } }
-		// 	]
-		// };
 		return response;
 	} catch (error) {
 		throw new Error(error);

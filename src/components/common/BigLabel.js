@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import device from '../../responsive/device';
 
 const BigLabel = styled.h2`
-  color: ${({ color }) => color || '#FFFFFF'};
+  color: ${props => props.theme.colors.white};
   display: block;
   font-weight: ${({ weight }) => weight || '600'};
-  font-size: ${({ fontSize }) => fontSize || '30px'};
+  font-size: ${props => props.theme.fontSizes.fontSize9};
   text-align: ${({ align }) => align || 'left'};
   padding: 5px 0;
   ${({ firstToUpperCase }) =>
@@ -16,13 +16,13 @@ const BigLabel = styled.h2`
   }
   `}
   @media ${device.tablet} {
-    font-size: ${({ fontSize }) => fontSize || '37px'};
+    font-size: ${props => props.theme.fontSizes.fontSize6};
   }
   @media ${device.laptop} {
-    font-size: ${({ fontSize }) => fontSize || '43px'};
+    font-size: ${props => props.theme.fontSizes.fontSize7};
   } 
   @media ${device.laptopL} {
-    font-size: ${({ fontSize }) => fontSize || '52px'};
+    font-size: ${props => props.theme.fontSizes.fontSize0};
   } 
 `;
 
