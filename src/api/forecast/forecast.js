@@ -7,7 +7,7 @@ export const fetchCurrentWeatherForecast = async location => {
 			path + `${location.id}`,
 			{
 				params: {
-					apikey: 'rU8IbzfUaTSX7cMv5ls2lRodrCJgCbu9',
+					apikey: 'SwYr4o6k2aWAJ9Lj5mNBWKgAHyh6iViO',
 					details: true,
 					language: 'en-us'
 				}
@@ -26,7 +26,7 @@ export const fetchWeeklyWeatherForecast = async (location, isMetric) => {
 			path + `${location.id}`,
 			{
 				params: {
-					apikey: 'rU8IbzfUaTSX7cMv5ls2lRodrCJgCbu9',
+					apikey: 'SwYr4o6k2aWAJ9Lj5mNBWKgAHyh6iViO',
 					details: true,
 					language: 'en-us',
 					metric: isMetric
