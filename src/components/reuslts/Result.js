@@ -9,15 +9,7 @@ import BigLabel from '../common/BigLabel';
 import SmallLabel from '../common/SmallLabel';
 import ForecastItem from './ForecastItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faCloud,
-	faBolt,
-	faCloudRain,
-	faCloudShowersHeavy,
-	faSnowflake,
-	faSun,
-	faSmog
-} from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faBolt, faCloudRain, faCloudShowersHeavy, faSnowflake, faSun, faSmog } from '@fortawesome/free-solid-svg-icons';
 
 const Result = props => {
 	let weatherIcon = null;
@@ -30,6 +22,8 @@ const Result = props => {
 	} else if (props.weather.iconId == 22) {
 		weatherIcon = <FontAwesomeIcon icon={faSnowflake} />;
 	} else if (props.weather.iconId == 1) {
+		weatherIcon = <FontAwesomeIcon icon={faSun} />;
+	} else if (props.weather.iconId == 2) {
 		weatherIcon = <FontAwesomeIcon icon={faSun} />;
 	} else if (props.weather.iconId == 7) {
 		weatherIcon = <FontAwesomeIcon icon={faCloud} />;
@@ -57,13 +51,8 @@ const Result = props => {
 				</BigLabel>
 				<SmallLabel weight={400}>{props.weather.date}</SmallLabel>
 				<ButtonWrapper>
-					<Button onClick={() => addToFavorites(props.forecastLocation.id)}>
-						Add to favorites
-					</Button>
-					<Button
-						onClick={() => removeFromFavorites(props.forecastLocation.id)}>
-						Remove from favorites
-					</Button>
+					<Button onClick={() => addToFavorites(props.forecastLocation.id)}>Add to favorites</Button>
+					<Button onClick={() => removeFromFavorites(props.forecastLocation.id)}>Remove from favorites</Button>
 				</ButtonWrapper>
 			</LocationWrapper>
 			<CurrentWeatherWrapper>
@@ -81,14 +70,7 @@ const Result = props => {
 				{props.weeklyWeather && (
 					<Forecast>
 						{props.weeklyWeather.map((item, index) => {
-							return (
-								<ForecastItem
-									key={index}
-									minTemperature={item.minTemperature}
-									maxTemperature={item.maxTemperature}
-									date={item.date}
-								/>
-							);
+							return <ForecastItem key={index} minTemperature={item.minTemperature} maxTemperature={item.maxTemperature} date={item.date} />;
 						})}
 					</Forecast>
 				)}

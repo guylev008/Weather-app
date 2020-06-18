@@ -4,7 +4,7 @@ export default {
 		currentLocation: {
 			id: 215854,
 			name: 'Tel Aviv',
-			contry: 'IL'
+			country: 'IL'
 		},
 		weather: null,
 		weeklyWeather: null,

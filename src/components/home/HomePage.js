@@ -2,13 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import device from '../../responsive/device';
 import Search from '../common/Search';
-import {
-	currentLocation,
-	selectedWeather,
-	selectedWeeklyWeather,
-	isMetric,
-	isFetchingData
-} from '../../state/forecast/selectors';
+import { currentLocation, selectedWeather, selectedWeeklyWeather, isMetric, isFetchingData } from '../../state/forecast/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocations } from '../../api/autocomplete/autocomplete';
 import { fetchWeatherForecast } from '../../state/forecast/operations';
@@ -45,9 +39,7 @@ const HomePage = () => {
 
 	const handleKeyDown = e => {
 		if (e.key === 'Enter') {
-			const location = options.find(
-				o => o.name.toLowerCase() === e.target.value.toLowerCase()
-			);
+			const location = options.find(o => o.name.toLowerCase() === e.target.value.toLowerCase());
 			if (!location) return;
 			dispatch(setCurrentLocation(location));
 			dispatch(fetchWeatherForecast(location, isMetricType));
@@ -56,19 +48,8 @@ const HomePage = () => {
 	return (
 		<Page>
 			<WeatherWrapper>
-				<Search
-					handleSearch={handleSearch}
-					handleKeyDown={handleKeyDown}
-					isLoading={isLoading}
-					options={options}
-				/>
-				{!isFetching && (
-					<Result
-						forecastLocation={location}
-						weather={currentweather}
-						weeklyWeather={weeklyForecast}
-					/>
-				)}
+				<Search handleSearch={handleSearch} handleKeyDown={handleKeyDown} isLoading={isLoading} options={options} />
+				{!isFetching && <Result forecastLocation={location} weather={currentweather} weeklyWeather={weeklyForecast} />}
 			</WeatherWrapper>
 		</Page>
 	);

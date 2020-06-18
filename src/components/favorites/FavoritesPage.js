@@ -17,7 +17,7 @@ const FavoritesPage = () => {
 			items.push(i);
 		});
 		if (items.length > 0) dispatch(fetchFavoritesForecast(items));
-	});
+	}, [dispatch]);
 
 	const onClick = id => {
 		let location = store.get(id);
