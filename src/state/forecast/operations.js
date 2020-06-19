@@ -21,7 +21,7 @@ export const fetchFavoritesForecast = locations => async dispatch => {
 	dispatch(startFetchingForecast());
 	const forecasts = await Promise.all(
 		locations.map(async location => {
-			const response = await (await fetchCurrentForecast(location)).data[0];
+			const response = await fetchCurrentForecast(location).data[0];
 
 			return {
 				id: location.id,
@@ -38,8 +38,8 @@ export const fetchFavoritesForecast = locations => async dispatch => {
 export const fetchWeatherForecast = (location, isMetric) => async dispatch => {
 	dispatch(startFetchingForecast());
 
-	const currentForecast = await (await fetchCurrentForecast(location)).data[0];
-	const weeklyForecast = await (await fetchWeeklyForecast(location, isMetric)).data;
+	const currentForecast = await fetchCurrentForecast(location).data[0];
+	const weeklyForecast = await fetchWeeklyForecast(location, isMetric).data;
 
 	const forecast = { currentForecast, weeklyForecast };
 	dispatch(fetchingForecastSuccess(forecast));
